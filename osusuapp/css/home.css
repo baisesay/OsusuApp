@@ -1,0 +1,429 @@
+:root {
+    --white-color: #f0f0f0;
+    --orange-bg: #e8491e;
+    --blue-bg: #0a1738;
+    --black-bg: #181719;
+    --gray-bg: #ecf0f5;
+    --light-blue-bg: #007bff;
+    --green-bg: #28a745;
+    --dark-pink-bg: #dc3545;
+    --shadow: 0 1px 5px rgba(148, 146, 146, 0.8);
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --indigo: #6610f2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+#grid-container {
+    background: var(--gray-bg);
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr;
+    grid-template-areas: 'dash-head dash-head dash-head dash-head''nav-bar dash-main dash-main dash-main';
+    margin: auto;
+    overflow: hidden;
+}
+
+#dash-header {
+    background: var(--orange-bg);
+    color: var(--white-color);
+    grid-area: dash-head;
+    display: flex;
+    justify-content: space-between;
+}
+
+#dash-header h1 {
+    margin-left: 10px;
+    font-size: 30px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.menu-toggle .btn-line {
+    margin: 0 0 5px 0;
+    width: 28px;
+    padding: 2px;
+    height: 1px;
+    background: var(--white-color);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+
+.menu-toggle.close .btn-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.close .btn-line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.close .btn-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+#nav-bar {
+    width: 250px;
+    background: var(--black-bg);
+    grid-area: nav-bar;
+}
+
+.nav-item {
+    border-top: var(--orange-bg) 1px solid;
+    overflow: hidden;
+}
+
+.nav-btn {
+    display: block;
+    padding: 16px 20px;
+    background: var(--black-bg);
+    color: var(--white-color);
+    position: relative;
+    font-size: 18px;
+}
+
+
+/*
+.nav-btn::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--black-bg);
+    left: 20px;
+    bottom: -7px;
+    transform: rotate(45deg);
+}
+*/
+
+.nav-btn i {
+    margin-right: 10px;
+}
+
+.active {
+    background: var(--orange-bg);
+}
+
+.sub-menu {
+    background: var(--orange-bg);
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
+}
+
+.sub-menu a {
+    display: block;
+    padding: 16px 26px;
+    color: var(--white-color);
+    margin: 4px 0;
+    position: relative;
+}
+
+.sub-menu a::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: var(--white-color);
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.sub-menu a:hover::before {
+    opacity: 1;
+}
+
+.nav-item:hover .sub-menu {
+    max-height: 10em;
+    transition: 0.7s ease-in;
+}
+
+#dash-main {
+    grid-area: dash-main;
+}
+
+.container {
+    display: grid;
+    grid-gap: 0.9em;
+    width: 80%;
+    margin: 20px auto;
+}
+
+h3 {
+    padding: 10px 0px;
+    font-size: 1.2em;
+    width: 100%;
+    text-align: center;
+}
+
+input {
+    background: transparent;
+    border: 0;
+    outline: none;
+    text-align: center;
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--white-color);
+}
+
+.main-cus {
+    display: grid;
+    grid-gap: 0.5em;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-areas: 'chart chart total-cus total-cus''chart chart female male';
+}
+
+.num-customers-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--white-color);
+    padding: 10px;
+}
+
+.cus-graph {
+    grid-area: chart;
+    box-shadow: var(--shadow);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/people-graph-L.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+.cus-graph:hover p,
+.amount-graph:hover P {
+    transform: scale(1.2);
+    transition: 0.6s ease-in-out;
+    color: var(--orange);
+}
+
+.total-cus {
+    grid-area: total-cus;
+    background: var(--light-blue-bg);
+    box-shadow: var(--shadow);
+}
+
+.total-female {
+    grid-area: female;
+    background: var(--dark-pink-bg);
+    box-shadow: var(--shadow);
+}
+
+.total-male {
+    grid-area: male;
+    background: var(--green-bg);
+    box-shadow: var(--shadow);
+}
+
+.main-amount {
+    display: grid;
+    grid-gap: 0.5em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'deposit withdraw money money '' balance balance money money ';
+}
+
+.amount-graph {
+    grid-area: money;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/money-graph.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    color: var(--white-color);
+}
+
+.deposit {
+    grid-area: deposit;
+    background: var(--orange);
+    box-shadow: var(--shadow);
+}
+
+.withdraw {
+    grid-area: withdraw;
+    background: var(--teal);
+    box-shadow: var(--shadow);
+}
+
+.board {
+    grid-area: board;
+    background: var(--indigo);
+    box-shadow: var(--shadow);
+}
+
+.balance {
+    grid-area: balance;
+    background: var(--cyan);
+    box-shadow: var(--shadow);
+}
+
+.total-amount input {
+    margin-top: 5px;
+    color: var(--white-color);
+}
+
+.main-accumulated {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 0.5em;
+}
+
+.accumulated {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--white-color);
+    box-shadow: var(--shadow);
+}
+
+.accumulated .circle {
+    background: var(--orange-bg);
+    width: 100%;
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.accumulated .circle p {
+    color: var(--white-color);
+    font-size: 1.2em;
+    margin-bottom: 0;
+    font-weight: 600;
+    width: 100%;
+}
+
+.accumulated h3 {
+    padding: 20px 0;
+    margin-top: 10px;
+}
+
+.accumulated input {
+    color: var(--orange-bg);
+    margin-bottom: 10px;
+}
+
+@media(max-width:1200px) {
+    .main-cus {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 'chart chart''total-cus total-cus''  female male';
+    }
+    .main-amount {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 'money money''deposit withdraw''balance balance';
+    }
+    .main-accumulated {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+}
+
+@media(max-width:768px) {
+    .main-cus {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 'chart chart''total-cus total-cus''female male';
+    }
+    .main-amount {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 'money money''deposit withdraw''balance balance';
+    }
+    #grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'dash-head''dash-main';
+    }
+    #nav-bar {
+        position: absolute;
+        top: 59px;
+        min-height: 50%;
+        left: -100%;
+        transition: 0.5s ease-in-out;
+    }
+    #nav-bar.active {
+        left: 0;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+}
+
+@media(max-width:576px) {
+    .main-cus {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 'chart ''total-cus''female'' male';
+    }
+    .main-amount {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 'money ''deposit''withdraw''balance';
+    }
+    .main-accumulated {
+        grid-template-columns: 1fr;
+    }
+    #nav-bar {
+        width: 100%;
+        text-align: justify;
+        top: 48px;
+    }
+    #dash-header h1 {
+        font-size: 20px;
+    }
+    .cus-graph:hover p,
+    .amount-graph:hover P {
+        transform: scale(1.0);
+    }
+}

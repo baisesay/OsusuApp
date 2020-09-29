@@ -1,0 +1,102 @@
+:root {
+    --white-color: #f0f0f0;
+    --orange-bg: #e8491e;
+    --black-bg: #181719;
+    --shadow: 0 1px 5px rgba(148, 146, 146, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../images/login-bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 30em;
+    width: 100%;
+    margin: 7em auto 0;
+    height: 27em;
+    box-sizing: border-box;
+    color: var(--white-color);
+    text-align: center;
+    display: grid;
+    grid-gap: 0.5em;
+}
+
+.login-form {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+.form-input {
+    padding: 5px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.form-input input {
+    width: 100%;
+    font-size: 1.2em;
+    border-bottom: var(--white-color) 2px solid;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background: transparent;
+    color: var(--white-color);
+}
+
+.form-input input:focus {
+    border-bottom: var(--orange-bg) 2px solid;
+}
+
+.form-btn {
+    width: 100%;
+    margin-top: 30px;
+}
+
+#btn-submit {
+    width: 80%;
+    border-radius: 10px;
+    border: 0;
+    font-size: 1.5em;
+    background: var(--white-color);
+    color: var(--orange-bg);
+    transition: 0.5s ease;
+}
+
+#btn-submit:hover {
+    background: var(--orange-bg);
+    color: var(--white-color);
+}
+
+.form-header {
+    background: var(--white-color);
+    color: var(--orange-bg);
+}
+
+.form-header i {
+    padding: 5px;
+}
+
+.form-input .form-label {
+    text-align: left;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.form-title {
+    background: var(--orange-bg);
+    color: var(--white-color);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

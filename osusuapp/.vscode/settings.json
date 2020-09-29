@@ -1,0 +1,8 @@
+{
+    "bracketPairColorizer.forceUniqueOpeningColor": true,
+    "bracketPairColorizer.forceIterationColorCycle": true,
+    "bracketPairColorizer.showBracketsInGutter": true,
+    "bracketPairColorizer.showBracketsInRuler": true,
+    "editor.formatOnSave": true,
+    "liveServer.settings.port": 5501
+}
